@@ -6,9 +6,13 @@ use Illuminate\Http\Request;
 
 class HelloController extends Controller
 {
-    public function index() {
+    public function index($id='zero') {
 
-        return view('hello/index');
+        $date = [
+            'msg'=>'これはコントローラーから渡されたメッセージです。',
+            'id'=>$id
+        ];
+        return view('hello.index', $date);
 
     }
 

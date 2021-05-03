@@ -10,6 +10,8 @@
   <body>
     <h1>Hello</h1>
     <p>test</p>
+    <p><?php echo $msg; ?></p>
+    <p>ID=<?php echo $id; ?></p>
     <p>これはサンプルです</p>
     <a href="/hello/other"> go to page </a>
   </body>
