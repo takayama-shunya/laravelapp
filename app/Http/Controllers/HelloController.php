@@ -6,11 +6,10 @@ use Illuminate\Http\Request;
 
 class HelloController extends Controller
 {
-    public function index($id='zero') {
+    public function index() {
 
         $date = [
-            'msg'=>'これはコントローラーから渡されたメッセージです。',
-            'id'=>$id
+            'msg'=>'名前を入力して下さい。',
         ];
         return view('hello.index', $date);
 
@@ -19,6 +18,14 @@ class HelloController extends Controller
     public function other() {
 
         return view('welcome');
+    }
+
+    public function post(Request $request)
+    {
+        $msg = $request->msg;
+        $date = [
+            'msg' => 'こんには' . $msg .  'さん！',       ];
+        return view('hello.index', $date);
     }
 }
 

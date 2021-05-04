@@ -21,6 +21,7 @@ use App\Http\Controllers\HelloController;
 
 Route::get('/hello/{id?}', [HelloController::class, 'index']);
 Route::get('/hello/other', [HelloController::class, 'other']);
+Route::post('/hello', [HelloController::class, 'post']);
 
 // Route::get('hello', 'App\Http\Controllers\HelloController@index');
 
