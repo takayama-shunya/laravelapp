@@ -8,10 +8,12 @@ class HelloController extends Controller
 {
     public function index() {
 
-        $date = [
-            'msg'=>'名前を入力して下さい。',
-        ];
-        return view('hello.index', $date);
+        // $date = [
+        //     // 'msg'=>'名前を入力して下さい。',
+        // ];
+        $data = ['one', 'two', 'three', 'four', 'five'];
+        return view('hello.index', ['data'=>$data]);
+        // return view('hello.index', ['msg'=>'']);
 
     }
 
@@ -25,7 +27,9 @@ class HelloController extends Controller
         $msg = $request->msg;
         $date = [
             'msg' => 'こんには' . $msg .  'さん！',       ];
-        return view('hello.index', $date);
+        // return view('hello.index', $date);
+        return view('hello.index', ['msg'=>$request->msg]);
+
     }
 }
 
