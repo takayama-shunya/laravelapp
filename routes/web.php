@@ -23,6 +23,7 @@ use App\Http\Controllers\HelloController;
 Route::get('/hello/other', [HelloController::class, 'other']);
 Route::post('/hello', [HelloController::class, 'post']);
 Route::get('hello', [HelloController::class, 'index'])->middleware('helo');
+Route::get('hello/show', [HelloController::class, 'show']);
 
 // Route::get('hello', [HelloController::class, 'index'])->middleware('helo');
 // Route::get('hello', [HelloController::class, 'index'])->middleware(HelloMiddleware::class);
