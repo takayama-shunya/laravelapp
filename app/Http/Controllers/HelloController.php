@@ -22,6 +22,24 @@ class HelloController extends Controller
        $item = DB::table('people')->where('id', $id)->first();
        return view('hello.show', ['item' => $item]);
     }    
+
+    public function add(Request $request)
+    {
+       return view('hello.add');
+    }
+    
+    public function create(Request $request)
+    {
+       $param = [
+           'name' => $request->name,
+           'mail' => $request->mail,
+           'age' => $request->age,
+       ];
+       DB::table('people')->insert($param);
+       return redirect('/hello');
+    }
+    
+    
     
    public function post(Request $request)
   {
