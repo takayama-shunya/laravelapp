@@ -18,6 +18,8 @@ Route::get('/', function () {
 });
 
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\PersonController;
+
 
 // Route::get('/hello/{id?}', [HelloController::class, 'index']);
 Route::get('/hello/other', [HelloController::class, 'other']);
@@ -30,6 +32,7 @@ Route::get('hello/edit', [HelloController::class, 'edit']);
 Route::post('hello/edit', [HelloController::class, 'update']);
 Route::get('hello/del', [HelloController::class, 'del']);
 Route::post('hello/del', [HelloController::class, 'remove']);
+Route::get('person', [PersonController::class, 'index']);
 
 
 // Route::get('hello', [HelloController::class, 'index'])->middleware('helo');
